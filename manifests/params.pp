@@ -29,8 +29,11 @@ class mysql::params {
         $client_package_name = 'mariadb'
         $server_package_name = 'mariadb-server'
       } else {
-        $client_package_name = 'mysql'
-        $server_package_name = 'mysql-server'
+        #$client_package_name = 'mysql'
+        $client_package_name = 'mysql-community-client'
+        #$server_package_name = 'mysql-community-servermysql-server'
+        $server_package_name = 'mysql-community-server'
+        #notify {'After upgrade Mysql, client_package_name should be mysql-community-client, server_package_name should be mysql-community-server!':}
       }
       $basedir             = '/usr'
       $config_file         = '/etc/my.cnf'
